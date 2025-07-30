@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://kit.fontawesome.com/749b88acba.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>To Do List</h1>
+        </div>
+        <p class="alert d-none">Please fill in all fields</p>
+
+        <form id="taskForm" class="input-section">
+            <input type="hidden" id="taskId">
+            <input type="text" id="taskName" class="task-name-input" placeholder="Enter Your Task">
+            <input type="date" id="taskdate" class="task-date-input">
+            <select id="priority" class="priority-input">
+                <option value="" disabled selected>Select Priority</option>
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+            <button type="submit" class="btn addtask" id="addTask">Add Task</button>
+        </form>
+        <div class="task-controls d-none">
+            <div class="filter-section">
+                <div class="status-filter">
+                   <button class="btn filter" id="allTasks">All Tasks</button>
+                   <button class="btn filter" id="activetasks">Active Tasks</button>
+                   <button class="btn filter" id="completedtasks">Completed Tasks</button>
+               </div>
+               <div class="sort-section">
+                   <button class="btn sort" id="sortByPriority">Sort By Priority</button>
+                   <button class="btn sort" id="sortByDate">Sort By Date</button>
+                </div>
+            </div>
+        
+            <table class="tasks-table" id="tasksTable">
+                <thead>
+                    <tr>
+                        <th class="column">Status</th>
+                        <th class="column">Tasks</th>
+                        <th class="column">Priority</th>
+                        <th class="column">Due Date</th>
+                        <th class="column">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Tasks will be dynamically added here -->
+                </tbody>
+            </table>
+
+        </div>
+        <button class="btn clear-btn d-none">Clear All</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
